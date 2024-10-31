@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    Search for Branch, Staff, Video, Member, Category
+{% endblock title %}
+
+{% block content %}
+    <div class="container my-4">
+        <h1 class="mb-4 text-center">Search for Branch, Staff, Video, Member, Category</h1>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" name="branch_number" class="form-control" placeholder="Enter Branch Number">
+            </div>
+            <div class="mb-3">
+                <input type="text" name="staff_number" class="form-control" placeholder="Search for Staff Name or Number">
+            </div>
+            <div class="mb-3">
+                <input type="text" name="rented_video" class="form-control" placeholder="Enter Rented Video Number">
+            </div>
+            <div class="mb-3">
+                <input type="text" name="video" class="form-control" placeholder="Video Title or Actor">
+            </div>
+            <div class="mb-3">
+                <input type="text" name="category" class="form-control" placeholder="Enter Category ID">
+            </div>
+            <div class="mb-3">
+                <input type="text" name="members" class="form-control" placeholder="Enter Member Number">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">SEARCH</button>
+        </form>
+    </div>
+{% endblock content %}

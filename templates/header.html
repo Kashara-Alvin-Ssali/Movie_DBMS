@@ -1,0 +1,56 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand h1 mb-0 text-white" href="{% url 'home' %}">
+            GROUP FOUR -- Eddiesoft
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-3">
+                    <a class="nav-link text-white {% if page == 'home' %} active {% endif %}" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link text-white {% if page == 'branch' %} active {% endif %}" href="{% url 'branch' %}">Branch</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link text-white {% if page == 'members' %} active {% endif %}" href="{% url 'members' %}">Members</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link text-white {% if page == 'staff' %} active {% endif %}" href="{% url 'staff' %}">Staff</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link text-white {% if page == 'category' %} active {% endif %}" href="{% url 'category' %}">Category</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link text-white {% if page == 'video' %} active {% endif %}" href="{% url 'video' %}">Video</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white {% if page not in 'home,members,staff,category,video,branch' %} active bg-danger {% endif %}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Queries
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item {% if page == 'rented_video' %} active {% endif %}" href="{% url 'rented_video' %}">Rented Video</a></li>
+                        <li><a class="dropdown-item {% if page == 'movie_rental_report' %} active {% endif %}" href="{% url 'movie_rental_report' %}">Movie Rental Report</a></li>
+                        <li><a class="dropdown-item {% if page == 'earnings_summary' %} active {% endif %}" href="{% url 'earnings_summary' %}">Earnings Summary</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_2' %} active {% endif %}" href="{% url 'query_2' %}">Query_2 (fname, lname, title, due_Date)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_3' %} active {% endif %}" href="{% url 'query_3' %}">Query_3 (customer_id, fname, lname, state, total_number_borrowed)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_4' %} active {% endif %}" href="{% url 'query_4' %}">Query_4 (movie_number, movie_title, movie_cost)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_5' %} active {% endif %}" href="{% url 'query_5' %}">Query_5 (returned after due_date)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_6' %} active {% endif %}" href="{% url 'query_6' %}">Query_6 (movie_number, movie_title, movie_cost, genre ending with 's')</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_7' %} active {% endif %}" href="{% url 'query_7' %}">Query_7 (GROUP BY genre, average rental > 1600)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_8' %} active {% endif %}" href="{% url 'query_8' %}">Query_8 (EXISTS operator: membership, balance)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_9' %} active {% endif %}" href="{% url 'query_9' %}">Query_9 (movies cost > all “Drama”)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_10' %} active {% endif %}" href="{% url 'query_10' %}">Query_10 (Sci-Fi, Adult, Drama movies)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_11' %} active {% endif %}" href="{% url 'query_11' %}">Query_11 (EXISTS: movie rentals)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_12' %} active {% endif %}" href="{% url 'query_12' %}">Query_12 (returned after due date)</a></li>
+                        <li><a class="dropdown-item {% if page == 'query_13' %} active {% endif %}" href="{% url 'query_13' %}">Query_13 (NOT EXISTS: no video)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
